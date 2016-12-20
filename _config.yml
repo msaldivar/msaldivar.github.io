@@ -1,5 +1,4 @@
-title: Midnight theme
+title: Learning something new
 description: Midnight is a theme for GitHub Pages.
-show_downloads: true
-google_analytics:
+include: ["_posts"]
 theme: 
