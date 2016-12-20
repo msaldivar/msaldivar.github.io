@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: High Level Understanding of Lambda Expressions
 ---
 

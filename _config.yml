@@ -1,4 +1,3 @@
 title: Learning something new
 description: Midnight is a theme for GitHub Pages.
-include: ["_posts"]
-theme: 
+permalink: date 
