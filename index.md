@@ -2,9 +2,13 @@
 layout: default
 ---
 
+<<<<<<< HEAD
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
 [Link to another page](another-page).
+=======
+foo
+>>>>>>> origin/master
 
 There should be whitespace between paragraphs.
 
