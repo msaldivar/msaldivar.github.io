@@ -12,7 +12,6 @@ $$f(x) = 2x + 1$$
 \\[f(x) = 2x + 1\\]
 
 $$g(x) = 3x + 2$$
-
 These functions have names and this is how we identify them. Remember in math class you were told to use functions \\(f(x)\\) and \\(g(x)\\) to solve blah. Well in Lambda Calculus functions don’t have names they’re anonymous. Well if a function doesn’t have a name how can it be identified? Let’s look at how the above functions would be written in lambda calculus.
 
 (λx.2x + 1)
