@@ -74,3 +74,26 @@ Lambda Expression Syntax:
     (a, b) -> System.out.println(a + “ “ + b)
       ~~~~ 
 
++ The type of the parameter can be declared or it can be inferred from the context.
+    + ~~~
+    (int a) is the same as (a)
+      ~~~
+
++ If more than one parameter is present the parameters are separated by commas and enclosed in parenthesis
+    + ~~~
+    (String boat, int boaty, float mcboatface)
+    (boat, boaty, mcboatface)
+      ~~~
+
++ The body of the lambda expression can have zero, one, or many expressions. If zero or many expressions exist you must use curly braces. Think of it like an if statement or for loop if only one line of code follows curly braces aren’t needed.
+    + ~~~
+    () -> {} this does nothing it takes no arguments and the body has no expression, but is still a valid lambda expression 
+    (int x, int y) -> { return x + y; }  or 
+    (int x, int y) -> return x + y; both are valid since the body only contains one expression 
+(List<Integer> x) -> {int min = x.get(0); for (int i = 1; i < x.size(); i++) if (x.get(i) < min) min = x.get(i); System.out.println(min); };
+      ~~~
+Multiple expressions exist in the body, so curly braces are required in this instance. Let’s break down the body to find out what the lambda expression does. The first thing we see in the body is a variable getting initialized with the first element in the array. Based on the variable name and seeing the for loop you can guess this expression just finds the minimum value in an array. 
+
+      
+More Examples:
+---
