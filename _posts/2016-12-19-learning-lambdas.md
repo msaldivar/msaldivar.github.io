@@ -62,8 +62,15 @@ Take a look at the actual lambda expression
 
 ~~~~
 a -> System.out.println(a)
-it follows our above syntax 
-(argument) -> (body)
+it follows the lambda syntax: (argument) -> (body)
 ~~~~ 
 
-~~~~(argument) -> (body)~~~~
+Lambda Expression Syntax: 
+---
++ A lambda expression can have zero, one , or many parameters
+    + ~~~~  
+        () -> System.out.println(“Hello World”) 
+        a -> System.out.println(a) 
+        (a, b) -> System.out.println(a + “ “ + b)
+      ~~~~ 
+
