@@ -35,3 +35,20 @@ You might be wondering what’s the point of learning lambda expressions if the 
 The syntax for a lambda expression in java is 
     (argument) -> (body)
 Let’s look at a simple use case printing the contents of a list
+
+
+~~~~
+public static void main(String[] args) {
+   List<String> avengersRoster = Arrays.asList("iron man", "captain america", "ant man", "spider-man", "black widow", "huik", "thor");
+
+
+   //old style
+   for (String avenger : avengersRoster) {
+       System.out.println(avenger);
+   }
+
+   //lambda expression
+   avengersRoster.forEach(a -> System.out.println(a));
+}
+~~~~
+{: .language-java}
