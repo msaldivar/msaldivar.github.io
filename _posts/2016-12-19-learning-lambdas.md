@@ -36,3 +36,7 @@ You might be wondering what’s the point of learning lambda expressions if the 
 
 The syntax for a lambda expression in java is (argument) -> (body)
 Let’s look at a simple use case printing the contents of a list
+
+Why should you learn lambda expressions in Java 8
+==================================================
+You might be wondering what’s the point of learning lambda expressions if the same thing can be accomplished with traditional functions that you’ve been using for years. For a few high level reasons lambda expressions reduce the total amount of code needed for a function, help you read modern java code, and improve your the codebase readability. Let’s look at some examples.
