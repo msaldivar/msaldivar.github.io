@@ -69,8 +69,8 @@ Lambda Expression Syntax:
 ---
 + A lambda expression can have zero, one , or many parameters
     + ~~~~  
-        () -> System.out.println(“Hello World”) 
-        a -> System.out.println(a) 
-        (a, b) -> System.out.println(a + “ “ + b)
+    () -> System.out.println(“Hello World”) 
+     a -> System.out.println(a) 
+    (a, b) -> System.out.println(a + “ “ + b)
       ~~~~ 
 
