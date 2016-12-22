@@ -59,8 +59,11 @@ public static void main(String[] args) {
 
 With the old style three lines of code are needed just to print each avenger. By using a lambda expression you reduced the needed code to one line! 
 Take a look at the actual lambda expression 
+
 ~~~~
 a -> System.out.println(a)
-~~~~ 
 it follows our above syntax 
+(argument) -> (body)
+~~~~ 
+
 ~~~~(argument) -> (body)~~~~
