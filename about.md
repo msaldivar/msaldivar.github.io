@@ -4,12 +4,5 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+I was a TA/tutor for three years during my undergrad and I always enjoyed explaining concepts to students. Seeing the 'light bulb' go off when a student was finally able to grasp a concept was awesome. I decided to start a blog series just giving a high level overview of programming concepts in the hopes I can help people have their light bulb moment.
 
-### More Information
-
-A place to include any other types of information that you'd like to include about yourself.
-
-### Contact me
-
-[email@domain.com](mailto:email@domain.com)
