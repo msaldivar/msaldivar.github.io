@@ -43,7 +43,7 @@ Let’s look at a simple use case printing the contents of a list
 
 ~~~~
 public static void main(String[] args) {
-   List<String> avengersRoster = Arrays.asList("iron man", "captain america", "ant man", "spider-man", "black widow", "huik", "thor");
+   List<String> avengersRoster = Arrays.asList("iron man", "captain america", "ant man", "spider-man", "black widow", "hulk", "thor");
 
 
    //old style
@@ -148,12 +148,12 @@ System.out.println("==");
 gpus.sort(new Comparator<GPU>() {
    @Override
    public int compare(GPU o1, GPU o2) {
-       return o2.getCubaCores() - o1.getCubaCores();
+       return o2.getcudaCores() - o1.getcudaCores();
    }
 });
 
 for (GPU gpu : gpus) {
-   System.out.println(gpu.getName() + " Cuba Cores:" + gpu.getCubaCores());
+   System.out.println(gpu.getName() + " cuda Cores:" + gpu.getcudaCores());
 }
 System.out.println("==");
 
@@ -197,10 +197,10 @@ GTX-770
 GTX-1070
 GTX-1080
 ==
-GTX-1080 Cuba Cores:2560
-GTX-1070 Cuba Cores:1920
-GTX-970 Cuba Cores:1664
-GTX-770 Cuba Cores:1536
+GTX-1080 cuda Cores:2560
+GTX-1070 cuda Cores:1920
+GTX-970 cuda Cores:1664
+GTX-770 cuda Cores:1536
 ==
 GTX-1080 Core Clock speed (MHz):1607
 GTX-1070 Core Clock speed (MHz):1506
@@ -245,8 +245,8 @@ List<GPU> gpus = Arrays.asList(new GPU("GTX-1080", 700, 2560, 1607, 1733, 8),
 gpus.sort((g1, g2) -> g1.getPrice() - g2.getPrice());
 gpus.forEach((g) -> System.out.println(g.getName() + " price $" + g.getPrice()));
 
-gpus.sort((g1, g2) -> g2.getCubaCores() - g1.getCubaCores());
-gpus.forEach((g) -> System.out.println(g.getName() + " Cuba Cores: " + g.getCubaCores()));
+gpus.sort((g1, g2) -> g2.getcudaCores() - g1.getcudaCores());
+gpus.forEach((g) -> System.out.println(g.getName() + " cuda Cores: " + g.getcudaCores()));
 
 gpus.sort((g1, g2) -> g2.getCoreClock() - g1.getCoreClock());
 gpus.forEach((g) -> System.out.println(g.getName() + " Core Clock Speed (Mhz): " + g.getCoreClock()));
