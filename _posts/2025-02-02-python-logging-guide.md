@@ -104,7 +104,6 @@ user_email = "user@example.com"
 logger.info(f"Processing request for user: {mask_sensitive_data(user_email)}")
 ```
 
-
 ## Performance Optimization
 
 Remember that logging is like taking photographs - while valuable, excessive snapshots can slow things down. Consider these optimization techniques:
