@@ -104,24 +104,25 @@ user_email = "user@example.com"
 logger.info(f"Processing request for user: {mask_sensitive_data(user_email)}")
 ```
 
-## Performance Considerations
 
-Remember that logging is like taking photographs - while valuable, excessive snapshots can slow things down. Consider these performance optimization techniques:
+## Performance Optimization
+
+Remember that logging is like taking photographs - while valuable, excessive snapshots can slow things down. Consider these optimization techniques:
 
 1. Use lazy evaluation for expensive operations:
    
 ```python
 # Instead of
-logger.debug(f"Complex calculation result: {expensive_calculations()}")
+logger.debug(f"Complex calculation result: {expensive_calculation()}")
 
 # Use
 if logger.isEnabledFor(logging.DEBUG):
-    logger.debug("Complex calculation result %s", expensive_calculations())
+    logger.debug("Complex calculation result: %s", expensive_calculation())
 ```
-Even when logging levels are set via environment variables, logger.isEnabledFor() serves two key purposes:
 
-* Performance - It prevents the expensive calculation from running at all when debug logs are disabled. Without the check, the calculation would run first, then the result would be discarded if debug logging is off.
-*   Dynamic level changes - Logging levels can be changed at runtime, not just via environment variables. The check ensures correct behavior if levels are modified during execution.
+The `isEnabledFor()` method serves two key purposes:
+* Prevents expensive calculations when logs are disabled
+* Supports dynamic level changes at runtime
 
 2. Batch logging operations when possible
 
@@ -130,40 +131,37 @@ Even when logging levels are set via environment variables, logger.isEnabledFor(
 for item in items:
     logger.info(f"Processing item: {item}")
     
-# Better: Batch process and log summary
+# Better: Batch process with structured logging
 processed_count = process_items(items)
-logger.info("Processed %d items in batch", processed_count)
-
-# For detailed logging, use structured format
-logger.debug("Batch processing details", extra={
-    "total_items": len(items),
-    "successful": processed_count,
-    "failed": len(items) - processed_count,
-    "batch_id": batch_id
+logger.info("Batch processing complete", extra={
+    "items_processed": processed_count,
+    "batch_id": batch_id,
+    "duration_ms": duration
 })
-
 ```
-Batching: Reduces log volume and improves performance by logging summaries instead of individual events
-
 
 3. Implement appropriate log levels in production
 
 ```python
-# local dev environment 
+# Development environment 
 logging.basicConfig(
     level=logging.DEBUG,
     format='%(asctime)s %(levelname)s %(message)s',
     handlers=[logging.StreamHandler()]
 )
 
-# production environment
+# Production environment
 logging.basicConfig(
     level=logging.WARNING,  # Only log warnings and above
     format='%(asctime)s %(levelname)s %(name)s %(message)s',
     handlers=[logging.StreamHandler()]
 )
 ```
-Having DEBUG or INFO level in production can generate an absurd amount of noise and storage cost. By default we should only log possible issues, and when investigating changing the log level at runtime or with environment variables can be used to help show a clearer picture. 
+
+Production environments should minimize log volume by:
+* Setting appropriate log levels (WARNING or above)
+* Using environment variables for dynamic level adjustment during investigation
+* Implementing structured logging for efficient filtering
 
 ## Conclusion
 
