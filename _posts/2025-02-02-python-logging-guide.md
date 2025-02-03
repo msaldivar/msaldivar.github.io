@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Debugging is to software development what detective work is to solving crimes - it's meticulous, challenging, and requires the right tools to gather evidence. Logging serves as our surveillance system, providing crucial insights into application behavior and performance. Just as a well-placed security camera can reveal what happened during an incident, proper logging practices enable developers to monitor, debug, and identify patterns can inform product, peformance, or security decions. 
+Debugging is to software development what detective work is to solving crimes - it's meticulous, challenging, and requires the right tools to gather evidence. Logging serves as our surveillance system, providing crucial insights into application behavior and performance. Just as a well-placed security camera can reveal what happened during an incident, proper logging practices enable developers to monitor, debug, and identify patterns to better inform product, peformance, or security decisions. 
 
 ## Core Components of Python Logging
 
