@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Debugging is to software development what detective work is to solving crimes - it's meticulous, challenging, and requires the right tools to gather evidence. Logging serves as our surveillance system, providing crucial insights into application behavior and performance. Just as a well-placed security camera can reveal what happened during an incident, proper logging practices enable developers to monitor, debug, and identify patterns to better inform product, peformance, or security decisions. 
+Debugging is to software development what detective work is to solving crimes - it's meticulous, challenging, and requires the right tools to gather evidence. Logging serves as our surveillance system, providing crucial insights into application behavior and performance. Just as a well-placed security camera can reveal what happened during an incident, proper logging practices enable developers to monitor, debug, and identify patterns to better inform product, performance, or security decisions. 
 
 ## Core Components of Python Logging
 
@@ -112,11 +112,11 @@ Remember that logging is like taking photographs - while valuable, excessive sna
    
 ```python
 # Instead of
-logger.debug(f"Complex calculation result: {expensive_calculation()}")
+logger.debug(f"Complex calculation result: {expensive_calculations()}")
 
 # Use
 if logger.isEnabledFor(logging.DEBUG):
-    logger.debug("Complex calculation result %s" lambda: expensive_calculations())
+    logger.debug("Complex calculation result %s", expensive_calculations())
 ```
 Even when logging levels are set via environment variables, logger.isEnabledFor() serves two key purposes:
 
