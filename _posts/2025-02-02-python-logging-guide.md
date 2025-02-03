@@ -59,7 +59,7 @@ logger.info("User action completed", extra={
 
 ### 3. Configure Log Rotation
 
-Just as you wouldn't keep every newspaper you've ever received, you shouldn't keep every log file forever. Implement log rotation to manage storage efficiently:
+Just as you wouldn't keep every piece of mail you've ever received, you shouldn't keep every log file forever. Implement log rotation to manage storage efficiently:
 
 ```python
 from logging.handlers import RotatingFileHandler
@@ -109,6 +109,7 @@ logger.info(f"Processing request for user: {mask_sensitive_data(user_email)}")
 Remember that logging is like taking photographs - while valuable, excessive snapshots can slow things down. Consider these performance optimization techniques:
 
 1. Use lazy evaluation for expensive operations:
+   
 ```python
 # Instead of
 logger.debug(f"Complex calculation result: {expensive_calculation()}")
