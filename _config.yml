@@ -26,15 +26,16 @@ description: >- # used by seo meta and the atom feed
 url: "https://msaldivar.github.io/"
 
 github:
-  username: github_username # change to your GitHub username
+  username: msaldivar # change to your GitHub username
 
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
   name: Maurice
-  email: [none] # change to your email address
+  email: none # change to your email address
   links:
     # The first element serves as the copyright owner's link
+    - twitter
     - https://linkedin.com/in/masaldivar
 
 # Site Verification Settings
