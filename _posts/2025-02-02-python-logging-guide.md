@@ -116,11 +116,54 @@ logger.debug(f"Complex calculation result: {expensive_calculation()}")
 
 # Use
 if logger.isEnabledFor(logging.DEBUG):
-    logger.debug(f"Complex calculation result: {expensive_calculation()}")
+    logger.debug("Complex calculation result %s" lambda: expensive_calculations())
 ```
+Even when logging levels are set via environment variables, logger.isEnabledFor() serves two key purposes:
+
+* Performance - It prevents the expensive calculation from running at all when debug logs are disabled. Without the check, the calculation would run first, then the result would be discarded if debug logging is off.
+*   Dynamic level changes - Logging levels can be changed at runtime, not just via environment variables. The check ensures correct behavior if levels are modified during execution.
 
 2. Batch logging operations when possible
+
+```python
+# Instead of individual logs for each item
+for item in items:
+    logger.info(f"Processing item: {item}")
+    
+# Better: Batch process and log summary
+processed_count = process_items(items)
+logger.info("Processed %d items in batch", processed_count)
+
+# For detailed logging, use structured format
+logger.debug("Batch processing details", extra={
+    "total_items": len(items),
+    "successful": processed_count,
+    "failed": len(items) - processed_count,
+    "batch_id": batch_id
+})
+
+```
+Batching: Reduces log volume and improves performance by logging summaries instead of individual events
+
+
 3. Implement appropriate log levels in production
+
+```python
+# local dev environment 
+logging.basicConfig(
+    level=logging.DEBUG,
+    format='%(asctime)s %(levelname)s %(message)s',
+    handlers=[logging.StreamHandler()]
+)
+
+# production environment
+logging.basicConfig(
+    level=logging.WARNING,  # Only log warnings and above
+    format='%(asctime)s %(levelname)s %(name)s %(message)s',
+    handlers=[logging.StreamHandler()]
+)
+```
+Having DEBUG or INFO level in production can generate an absurd amount of noise and storage cost. By default we should only log possible issues, and when investigating changing the log level at runtime or with environment variables can be used to help show a clearer picture. 
 
 ## Conclusion
 
